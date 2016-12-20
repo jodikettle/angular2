@@ -96,10 +96,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\charts\line-chart-demo.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="systemjs.config.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <None Include="Web.Debug.config">
@@ -118,9 +120,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.spec.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\charts-section.ts" />
+    <TypeScriptCompile Include="app\charts\line-chart-demo.ts" />
+    <TypeScriptCompile Include="app\headersection.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>

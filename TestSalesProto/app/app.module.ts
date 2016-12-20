@@ -1,11 +1,27 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
+import { ChartsModule } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent }  from './app.component';
+import { ChartsSectionComponent } from './charts-section.js';
+import { LineChartDemoComponent } from './charts/line-chart-demo.js';
+import { TabsModule, CollapseModule, DropdownModule } from 'ng2-bootstrap';
+
+import { DemoComponent } from './app.component.js';
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+    bootstrap: [DemoComponent],
+    declarations: [
+        DemoComponent,
+        ChartsSectionComponent,
+        LineChartDemoComponent,
+    ],
+    imports: [
+        BrowserModule,
+        ChartsModule,
+        TabsModule,
+        CollapseModule,
+        DropdownModule
+    ]
 })
-export class AppModule { }
+
+export class DemoModule { }

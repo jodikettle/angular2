@@ -1,25 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Angular QuickStart</title>
+    <title>Prototype sales board</title>
     <meta charset="UTF-8">
+     <meta name="description" content="Angular2 Charts">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
+      <!-- Polyfill(s) for older browsers -->
+      <script src="node_modules/core-js/client/shim.min.js"></script>
+      <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+      <!--link to bootstrap.css-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
+      <style media="screen">
+          .header {
+              background-color: #0143A3;
+              background: -webkit-linear-gradient(#0143A3, #0273D4);
+              background: linear-gradient(#0143A3, #0273D4);
+              color: #FFF;
+              padding: 30px;
+          }
+
+          section {
+              padding-top: 30px;
+          }
+      </style>
   </head>
-
   <body>
-    <my-app>Loading AppComponent content here ...</my-app>
+    <sales-app>Loading ...</sales-app>
+
+    <script>
+        System.import('systemjs.config.js').then(function () {
+            System.import('app');
+        }).catch(console.error.bind(console));
+      </script>
+
+      <script src="node_modules/zone.js/dist/zone.js"></script>
+      <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
   </body>
 </html>
