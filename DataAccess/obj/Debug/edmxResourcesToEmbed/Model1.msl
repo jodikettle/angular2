@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JodisGreatNewDbModelStoreContainer" CdmEntityContainer="JodisGreatNewDbEntities">
+    <EntitySetMapping Name="JViews">
+      <EntityTypeMapping TypeName="JodisGreatNewDbModel.JView">
+        <MappingFragment StoreEntitySet="JView">
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="DAILYTODAY" ColumnName="DAILYTODAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

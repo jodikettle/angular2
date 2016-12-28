@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JodisGreatNewDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="JView">
+    <Key>
+      <PropertyRef Name="SiteID" />
+    </Key>
+    <Property Name="SiteID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DAILYTODAY" Type="Decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="JodisGreatNewDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="JViews" EntityType="Self.JView" />
+  </EntityContainer>
+</Schema>

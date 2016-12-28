@@ -124,8 +124,10 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\charts-section.ts" />
     <TypeScriptCompile Include="app\charts\line-chart-demo.ts" />
+    <TypeScriptCompile Include="app\data\DataService.ts" />
     <TypeScriptCompile Include="app\headersection.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\shared\SocketService.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

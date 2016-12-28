@@ -8,9 +8,7 @@ let chartDesc: Array<any> = [
     {
         heading: 'Line Chart',
         tag: 'line-chart-demo',
-        id: 'lineChart',
-        //ts: require('!!prismjs?lang=markup!./charts/line-chart-demo.js'),
-        //html: require('!!prismjs?lang=markup!./charts/line-chart-demo.html')
+        id: 'lineChart'
     }
 ];
 
