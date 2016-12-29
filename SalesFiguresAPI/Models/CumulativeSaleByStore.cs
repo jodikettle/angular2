@@ -8,6 +8,6 @@ namespace SalesFiguresAPI.Models
 
         public string StoreId { get; set; }
 
-        public List<CumulativeSalesData> Data {get;set;}
+        public List<CumulativeSalesData> Data { get; set;}
     }
 }

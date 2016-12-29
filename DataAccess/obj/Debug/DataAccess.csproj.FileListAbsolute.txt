@@ -20,4 +20,3 @@ C:\Users\jkettle\Documents\angular2\DataAccess\bin\Debug\EntityFramework.dll
 C:\Users\jkettle\Documents\angular2\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\jkettle\Documents\angular2\DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\jkettle\Documents\angular2\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\jkettle\Documents\angular2\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache

@@ -30,6 +30,39 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteId = "001",
+                Hour = 11,
+                TodaysValue = 180,
+                LastYearsValue = 180
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "001",
+                Hour = 12,
+                TodaysValue = 0,
+                LastYearsValue = 200
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "001",
+                Hour = 13,
+                TodaysValue = 0,
+                LastYearsValue = 230
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "001",
+                Hour = 14,
+                TodaysValue = 0,
+                LastYearsValue = 250
+            });
+
+
+            list.Add(new SiteSalesPerHour()
+            {
                 SiteId = "003",
                 Hour = 9,
                 TodaysValue = 10,
