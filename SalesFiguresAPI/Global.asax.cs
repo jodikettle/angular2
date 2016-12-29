@@ -23,13 +23,14 @@ namespace SalesFiguresAPI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapperBootStrapper.BootStrap();
-            SqlDependency.Start(connString);
+
+
+            //SqlDependency.Start(connString);
         }
 
         protected void Application_End()
         {
-            //Stop SQL dependency
-            SqlDependency.Stop(connString);
+            //SqlDependency.Stop(connString);
         }
     }
 }

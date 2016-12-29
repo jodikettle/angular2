@@ -10,15 +10,13 @@ namespace DataAccess.Hubs
 {
     public class MessagesHub : Hub
     {
-        string connString = ConfigurationManager.ConnectionStrings["merretDb"].ConnectionString.ToString();
-
         public void Hello()
         {
             Clients.All.hello();
         }
 
         [HubMethodName("sendMessages")]
-        public static void SendMessages()
+        public static void SendSiteStoreByHourChange()
         {
             IHubContext context = GlobalHost.ConnectionManager.GetHubContext<MessagesHub>();
             context.Clients.All.updateMessages();

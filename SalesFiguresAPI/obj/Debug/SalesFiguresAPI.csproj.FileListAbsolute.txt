@@ -70,7 +70,5 @@ C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Microsoft.AspNet.SignalR
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Microsoft.Owin.xml
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Microsoft.Owin.Security.xml
-C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\EntityFramework.dll
-C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\EntityFramework.xml
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\AutoMapper.dll
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\AutoMapper.xml

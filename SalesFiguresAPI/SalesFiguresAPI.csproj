@@ -219,6 +219,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CumulativeSaleByStore.cs" />
+    <Compile Include="Models\CumulativeSalesData.cs" />
     <Compile Include="Models\GeneralPageViewModel.cs" />
     <Compile Include="Models\HomePageViewModel.cs" />
     <Compile Include="Models\SalesByHourByStore.cs" />
@@ -226,6 +228,7 @@
     <Compile Include="Models\StoreName.cs" />
     <Compile Include="Models\StorePageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CumulativesSalesService.cs" />
     <Compile Include="Services\TodaysSalesService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

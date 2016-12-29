@@ -15,7 +15,6 @@ namespace SalesFiguresAPI.Controllers
             var service = new TodaysSalesService();
             var model = new GeneralPageViewModel();
             model.TodaysTotalSales = new List<SiteTotalSales>();//service.GetTodaySales();
-            model.LastYearsSales = service.GetLastYearsTodaySales();
             return View(model);
         }
 

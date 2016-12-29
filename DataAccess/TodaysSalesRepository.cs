@@ -24,7 +24,7 @@ namespace DataAccess
                     command.Notification = null;
 
                     var dependency = new SqlDependency(command);
-                    dependency.OnChange += new OnChangeEventHandler(dependency_OnChange);
+                    dependency.OnChange += new OnChangeEventHandler(TodaysSales_OnChange);
 
                     if (connection.State == ConnectionState.Closed)
                         connection.Open();
@@ -51,21 +51,19 @@ namespace DataAccess
             //    GROUP BY RTSASUP.SMSITE";
         }
 
-        public List<SiteSalesPerHour> GetSalesByHourPerStore()
+        public List<SiteSalesPerHour> GetSalesByHourPerStore(string StoreId)
         {
-
             var values = new List<SiteSalesPerHour>();
-
             using (var connection = new SqlConnection(_connString))
             {
                 connection.Open();
 
-                using (var command = new SqlCommand(@"SELECT SiteId, Time as Hour, CurrentAmount, LastYearAmount from [dbo].SalesByHour", connection))
+                using (var command = new SqlCommand(@"SELECT SiteId, Time as Hour, CurrentAmount, LastYearAmount from [dbo].SalesByHour Where SiteId = "+ StoreId, connection))
                 {
                     command.Notification = null;
 
                     //var dependency = new SqlDependency(command);
-                    //dependency.OnChange += new OnChangeEventHandler(dependency_OnChange);
+                    //dependency.OnChange += new OnChangeEventHandler(SiteStoreByHour_OnChange);
 
                     if (connection.State == ConnectionState.Closed)
                         connection.Open();
@@ -154,23 +152,20 @@ namespace DataAccess
             //) AS B
             //on A.Site = B.Site   and A.Hour = B.Hour and A.SMTZON = B.SMTZON
             //ORDER BY b.site, B.Hour, B.SMTZON
-
         }
 
-        public int GetLastYearsTodaySales()
-        {
-            //SELECT  RTSASUP.SMSITE as SiteID, sum(smbsr+smbsrr) as DAILYTODAY 
-            //FROM V0608LDHHN.RTSASUP RTSASUP
-            //WHERE RTSASUP.SMDATE = @Today_CY AND SMSITE IN('0001', '0002', '0003', '0004', '0005', '0006', '0007', '0009', '0018', '002B')
-            //GROUP BY RTSASUP.SMSITE
-            return 50;
-        }
-
-        private void dependency_OnChange(object sender, SqlNotificationEventArgs e)
+        private void SiteStoreByHour_OnChange(object sender, SqlNotificationEventArgs e)
         {
             if (e.Type == SqlNotificationType.Change)
             {
-                MessagesHub.SendMessages();
+                MessagesHub.SendSiteStoreByHourChange();
+            }
+        }
+        private void TodaysSales_OnChange(object sender, SqlNotificationEventArgs e)
+        {
+            if (e.Type == SqlNotificationType.Change)
+            {
+                MessagesHub.SendSiteStoreByHourChange();
             }
         }
     }

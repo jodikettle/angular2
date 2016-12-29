@@ -4,47 +4,49 @@
 }
 <div class="jumbotron">
     <h1>Sales Dashboard</h1>
-    @Html.EnumDropDownListFor(m => m.SelectedStore, new { @class = "form-control" })
+    @*@Html.EnumDropDownListFor(m => m.SelectedStore, new { @class = "form-control" })*@
 </div>
 <div class="row">
-    <canvas id="myChart" width="800" height="400"></canvas>
-
-    @for (int i = 0; i < Model.TodaysFigures.Count(); i++){
-        //making a JS array
-        if (i == 0) {
-            test = Model.TodaysFigures[i].TotalSales.ToString();
-        }
-        else
-        {
-            test = test + "," + Model.TodaysFigures[i].TotalSales.ToString();
-        }
+    @for (int i = 0; i < Model.TodayCumulativeFigures.Count(); i++)
+    {
+        <canvas id="@Model.TodayCumulativeFigures[i].StoreName +'canvas'" width="800" height="400"></canvas>
+        ////making a JS array
+        //if (i == 0)
+        //{
+        //    test = Model.TodayCumulativeFigures[i].TotalSales.ToString();
+        //}
+        //else
+        //{
+        //    test = test + "," + Model.TodaysFigures[i].TotalSales.ToString();
+        //}
     }
 </div>
 @section Scripts{
     <script>
-        var result = "@test";
-        var resultsArray = result.split(',');
-        var context = $("#myChart").get(0).getContext("2d");
+        var result = @Html.Raw(Json.Encode(Model));
+        console.log(result);
+        //var resultsArray = result.split(',');
+        //var context = $("#myChart").get(0).getContext("2d");
 
-        var data = {
-            //Labels should be the siteIds
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
+        //var data = {
+        //    //Labels should be the siteIds
+        //    labels: ["January", "February", "March", "April", "May", "June", "July"],
+        //    datasets: [{
 
-                label: "Knightsbridge",
-                fillColor: "rgba(220,220,220,0,2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: resultsArray
-            }]
-        }
+        //        label: "Knightsbridge",
+        //        fillColor: "rgba(220,220,220,0,2)",
+        //        strokeColor: "rgba(220,220,220,1)",
+        //        pointColor: "rgba(220,220,220,1)",
+        //        pointStrokeColor: "#fff",
+        //        pointHighlightFill: "#fff",
+        //        pointHighlightStroke: "rgba(220,220,220,1)",
+        //        data: resultsArray
+        //    }]
+        //}
 
-        var myNewChart = new Chart(context, {
-            type: "line",
-            data: data,
-        });
+        //var myNewChart = new Chart(context, {
+        //    type: "line",
+        //    data: data,
+        //});
     </script>
 }

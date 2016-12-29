@@ -13,17 +13,5 @@ namespace SalesFiguresAPI.Services
             var repo = new TodaysSalesRepository();
             return Mapper.Map<List<SiteTotalFigures>>(repo.GetTodaysSales());
         }
-        public int GetLastYearsTodaySales()
-        {
-            var repo = new TodaysSalesRepository();
-            return repo.GetLastYearsTodaySales();
-        }
-
-        public List<SalesByHourByStore> GetSalesByHourByStore()
-        {
-            //GetSalesByHourByStore
-            var repo = new TodaysSalesRepository();
-            return Mapper.Map<List<SalesByHourByStore>>(repo.GetSalesByHourPerStore());
-        }
     }
 }

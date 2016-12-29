@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSalesProto", "TestSalesProto\TestSalesProto.csproj", "{0ED74DAB-4B03-486D-9F38-5FBF1AE70CAC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesFiguresAPI", "SalesFiguresAPI\SalesFiguresAPI.csproj", "{320D71CA-F90F-445B-ABB5-9C5AA2B4BFD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{BD99D908-51AF-42C8-B7F2-FA0CA5AA358F}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0ED74DAB-4B03-486D-9F38-5FBF1AE70CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ED74DAB-4B03-486D-9F38-5FBF1AE70CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ED74DAB-4B03-486D-9F38-5FBF1AE70CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ED74DAB-4B03-486D-9F38-5FBF1AE70CAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{320D71CA-F90F-445B-ABB5-9C5AA2B4BFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{320D71CA-F90F-445B-ABB5-9C5AA2B4BFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320D71CA-F90F-445B-ABB5-9C5AA2B4BFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
