@@ -7,6 +7,6 @@ namespace DataAccess
     {
         List<SiteSalesPerHour> GetCumulativeSalesForAllStores();
 
-        SiteSalesPerHour GetCumulativeSalesForToday(string StoreId);
+        List<SiteSalesPerHour> GetCumulativeSalesForToday(string StoreId);
     }
 }

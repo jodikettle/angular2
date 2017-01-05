@@ -79,9 +79,51 @@ namespace DataAccess
             return list;
         }
 
-        public SiteSalesPerHour GetCumulativeSalesForToday(string StoreId)
+        public List<SiteSalesPerHour> GetCumulativeSalesForToday(string StoreId)
         {
-            throw new NotImplementedException();
+            var list = new List<SiteSalesPerHour>();
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 9,
+                TodaysValue = 10,
+                LastYearsValue = 15
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 10,
+                TodaysValue = 20,
+                LastYearsValue = 35
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 11,
+                TodaysValue = 50,
+                LastYearsValue = 75
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 12,
+                TodaysValue = 80,
+                LastYearsValue = 95
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 13,
+                TodaysValue = 90,
+                LastYearsValue = 105
+            });
+
+            return list;
         }
     }
 }

@@ -7,20 +7,41 @@ namespace SalesFiguresAPI.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICumulativeSalesService _service;
+
+        public HomeController(ICumulativeSalesService service)
+        {
+            this._service = service;
+        }
+
         public ActionResult Index()
         {
             var model = new HomePageViewModel();
-            var service = new CumulativesSalesService(new FakeSalesRepository());
-            model.TodayCumulativeFigures = service.GetAllStoresCumulativeSalesForToday();
+            //var cookieInfo = Request.Cookies["HomeStore"];
+            //if (cookieInfo != null)
+            //{
+            //    model.cookieInfo = cookieInfo.Value;
+            //}
+            model.TodayCumulativeFigures = _service.GetAllStoresCumulativeSalesForToday();
             return View(model);
         }
 
-        public ActionResult Store(string storeId)
+        public ActionResult Store(int id)
         {
+            if (id == 0)
+            {
+                Response.Redirect("Home/Index");
+            }
             var model = new StorePageViewModel();
-            var service = new CumulativesSalesService(new SalesRepository());
-            //model.Data = service.GetCumulativeSalesForToday(storeId);
+
+            //model.StoreId = id;
+            model.StoreName = (StoreName)id;
+
+            model.CumulativeSalesForToday = _service.GetCumulativeSalesForToday(id.ToString());
+
+            //return Json(returnData, JsonRequestBehavior.AllowGet);
             return View(model);
+
         }
     }
 }

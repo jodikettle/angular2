@@ -72,3 +72,10 @@ C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Microsoft.Owin.Host.Syst
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Microsoft.Owin.Security.xml
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\AutoMapper.dll
 C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\AutoMapper.xml
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Ninject.dll
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Ninject.xml
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Ninject.Web.Common.dll
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Ninject.Web.Mvc.dll
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\WebActivatorEx.dll
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Ninject.Web.Common.xml
+C:\Users\jkettle\Documents\angular2\SalesFiguresAPI\bin\Ninject.Web.Mvc.xml

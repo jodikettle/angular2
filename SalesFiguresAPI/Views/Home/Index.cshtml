@@ -3,8 +3,7 @@
     string test = string.Empty;
 }
 <div class="jumbotron">
-    <h1>Sales Dashboard</h1>
-    @*@Html.EnumDropDownListFor(m => m.SelectedStore, new { @class = "form-control" })*@
+    @Html.EnumDropDownListFor(m => m.StoreName, "Select My Home Store", new { @class = "form-control" })
 </div>
 <div class="row">
     @foreach (var storeData in Model.TodayCumulativeFigures) {
@@ -16,6 +15,12 @@
 </div>
 @section Scripts{
     <script>
+
+        $('#StoreName').on('change',function()
+        {
+            window.location.href = "/home/store/" + this.value;
+        });
+
         var results = @Html.Raw(Json.Encode(Model.TodayCumulativeFigures));
         console.log(results);
         console.log(results.length);
@@ -86,6 +91,5 @@
                 data: data
             });
         }
-
     </script>
 }

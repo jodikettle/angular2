@@ -15,7 +15,6 @@ namespace SalesFiguresAPI.App_Start
                 cfg.CreateMap<SiteSalesPerHour, SalesByHourByStore>();
                 cfg.CreateMap<SiteSalesPerHour, CumulativeSalesData>();
             });
-            //Mapper.CreateMap<IEnumerable<IGrouping<String, Zone>>, IEnumerable<IGrouping<String, ZoneDTO>>>()
         }
     }
 }

@@ -2,8 +2,12 @@
 {
     public enum StoreName
     {
-        Knightsbridge,
+        Knightsbridge= 1,
         Leeds,
-        Liverpool
+        Liverpool,
+        Bristol, 
+        Edinburgh,
+        Birmingham,
+        Manchester
     }
 }

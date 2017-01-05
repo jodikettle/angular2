@@ -11,7 +11,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public SiteSalesPerHour GetCumulativeSalesForToday(string StoreId)
+        public List<SiteSalesPerHour> GetCumulativeSalesForToday(string StoreId)
         {
             throw new NotImplementedException();
         }
