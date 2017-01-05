@@ -23,10 +23,11 @@ namespace SalesFiguresAPI.Services
             return salesGroupedByStore;
         }
 
-        public List<CumulativeSaleByStore> GetCumulativeSalesForToday(string StoreId)
+        public CumulativeSaleByStore GetCumulativeSalesForToday(string StoreId)
         {
             var sales = this.repository.GetCumulativeSalesForToday(StoreId);
-            return Mapper.Map<List<CumulativeSaleByStore>>(sales);
+            var salesByStore = new CumulativeSaleByStore() { StoreId = StoreId, Data = Mapper.Map<List<CumulativeSalesData>>(sales) };
+            return salesByStore;
         }
     }
 }

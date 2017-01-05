@@ -16,8 +16,8 @@ namespace DataAccess
             {
                 SiteId = "001",
                 Hour = 09,
-                TodaysValue = 80,
-                LastYearsValue = 90
+                TodaysValue = 0,
+                LastYearsValue = 0
             });
 
             list.Add(new SiteSalesPerHour()
@@ -87,8 +87,8 @@ namespace DataAccess
             {
                 SiteId = "003",
                 Hour = 9,
-                TodaysValue = 10,
-                LastYearsValue = 15
+                TodaysValue = 0,
+                LastYearsValue = 0
             });
 
             list.Add(new SiteSalesPerHour()
@@ -120,7 +120,55 @@ namespace DataAccess
                 SiteId = "003",
                 Hour = 13,
                 TodaysValue = 90,
+                LastYearsValue = 125
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 14,
+                TodaysValue = 0,
                 LastYearsValue = 105
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 15,
+                TodaysValue = 0,
+                LastYearsValue = 145
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 16,
+                TodaysValue = 0,
+                LastYearsValue = 155
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 17,
+                TodaysValue = 0,
+                LastYearsValue = 165
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 18,
+                TodaysValue = 0,
+                LastYearsValue = 180
+            });
+
+            list.Add(new SiteSalesPerHour()
+            {
+                SiteId = "003",
+                Hour = 19,
+                TodaysValue = 0,
+                LastYearsValue = 200
             });
 
             return list;

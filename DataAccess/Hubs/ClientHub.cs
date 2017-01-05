@@ -15,8 +15,15 @@ namespace DataAccess.Hubs
             Clients.All.hello();
         }
 
-        [HubMethodName("sendMessages")]
-        public static void SendSiteStoreByHourChange()
+        [HubMethodName("updateAllStoresData")]
+        public static void SendAllStoresByHourChange()
+        {
+            IHubContext context = GlobalHost.ConnectionManager.GetHubContext<MessagesHub>();
+            context.Clients.All.updateMessages();
+        }
+
+        [HubMethodName("updateStoreByHour")]
+        public static void SendStoreByHourChange()
         {
             IHubContext context = GlobalHost.ConnectionManager.GetHubContext<MessagesHub>();
             context.Clients.All.updateMessages();

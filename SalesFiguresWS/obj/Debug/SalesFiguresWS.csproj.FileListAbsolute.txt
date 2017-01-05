@@ -1,6 +1,0 @@
-C:\Users\jkettle\Documents\angular2\SalesFiguresWS\bin\Debug\SalesFiguresWS.exe.config
-C:\Users\jkettle\Documents\angular2\SalesFiguresWS\bin\Debug\SalesFiguresWS.exe
-C:\Users\jkettle\Documents\angular2\SalesFiguresWS\bin\Debug\SalesFiguresWS.pdb
-C:\Users\jkettle\Documents\angular2\SalesFiguresWS\obj\Debug\SalesFiguresWS.csprojResolveAssemblyReference.cache
-C:\Users\jkettle\Documents\angular2\SalesFiguresWS\obj\Debug\SalesFiguresWS.exe
-C:\Users\jkettle\Documents\angular2\SalesFiguresWS\obj\Debug\SalesFiguresWS.pdb

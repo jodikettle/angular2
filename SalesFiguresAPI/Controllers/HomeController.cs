@@ -33,15 +33,11 @@ namespace SalesFiguresAPI.Controllers
                 Response.Redirect("Home/Index");
             }
             var model = new StorePageViewModel();
-
-            //model.StoreId = id;
             model.StoreName = (StoreName)id;
-
             model.CumulativeSalesForToday = _service.GetCumulativeSalesForToday(id.ToString());
 
             //return Json(returnData, JsonRequestBehavior.AllowGet);
             return View(model);
-
         }
     }
 }

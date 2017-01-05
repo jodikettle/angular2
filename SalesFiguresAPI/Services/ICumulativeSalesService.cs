@@ -7,6 +7,6 @@ namespace SalesFiguresAPI.Services
     {
         List<CumulativeSaleByStore> GetAllStoresCumulativeSalesForToday();
 
-        List<CumulativeSaleByStore> GetCumulativeSalesForToday(string StoreId);
+        CumulativeSaleByStore GetCumulativeSalesForToday(string StoreId);
     }
 }

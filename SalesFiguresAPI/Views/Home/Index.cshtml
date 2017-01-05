@@ -2,15 +2,14 @@
 @{ 
     string test = string.Empty;
 }
-<div class="jumbotron">
+<div class="row">
     @Html.EnumDropDownListFor(m => m.StoreName, "Select My Home Store", new { @class = "form-control" })
 </div>
 <div class="row">
     @foreach (var storeData in Model.TodayCumulativeFigures) {
 
-        <h3>@storeData.StoreId</h3>
-        <p>@storeData.StoreName</p>
-        <canvas id="@(storeData.StoreId + "canvas")" width="800" height="400"></canvas>
+        <p>@storeData.StoreName.ToString()</p>
+        <canvas id="@(storeData.StoreId + "canvas")" width="600" height="200"></canvas>
     }
 </div>
 @section Scripts{
@@ -22,24 +21,27 @@
         });
 
         var results = @Html.Raw(Json.Encode(Model.TodayCumulativeFigures));
-        console.log(results);
-        console.log(results.length);
+
         for(var i = 0; i< results.length; i++){
-            console.log('What happen');
             var nameOfCanvas = results[i].StoreId + 'canvas';
             var context = $("#"+nameOfCanvas).get(0).getContext("2d");
 
-            console.log(context);
-
             var storeData = results[i].Data;
 
-            var todaysValues = storeData.map(function(a) { if (a.TodaysValue != 0 ) return a.TodaysValue; else return undefined; });
-            var lastYearsValues = storeData.map(function(a) {return a.LastYearsValue;});
+            var todaysValues = $.map(storeData, function(elem, i) {
+                if (elem.TodaysValue == 0 && i > 0){
+                    return undefined;                
+                }
+                else {
+                    return elem.TodaysValue;;
+                }
+            });
 
-            console.log(todaysValues);
+            var lastYearsValues = storeData.map(function(a) {return a.LastYearsValue;});
+            var xaxis = storeData.map(function (a) { return a.Hour });
 
             var data = {
-                labels: [9,10,11,12,13,14,15,16,17,18,19,20,21],
+                labels: xaxis,
                 datasets: [
                     {
                         label: 'Todays Values',

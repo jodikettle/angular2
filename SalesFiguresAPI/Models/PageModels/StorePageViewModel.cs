@@ -11,6 +11,6 @@ namespace SalesFiguresAPI.Models
 
         public StoreName StoreName { get; set; }
 
-        public List<CumulativeSaleByStore> CumulativeSalesForToday { get; set; }
+        public CumulativeSaleByStore CumulativeSalesForToday { get; set; }
     }
 }
