@@ -30,5 +30,13 @@ namespace DataAccess.Hubs
         }
 
 
+        [HubMethodName("totalSalesByStore")]
+        public static void TotalSalesByStore()
+        {
+            IHubContext context = GlobalHost.ConnectionManager.GetHubContext<MessagesHub>();
+            context.Clients.All.updateMessages();
+        }
+
+
     }
 }

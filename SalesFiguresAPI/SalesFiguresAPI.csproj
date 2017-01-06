@@ -235,17 +235,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AllStoresThisYearAndLastViewModel.cs" />
     <Compile Include="Models\CumulativeSaleByStore.cs" />
     <Compile Include="Models\CumulativeSalesData.cs" />
     <Compile Include="Models\GeneralPageViewModel.cs" />
     <Compile Include="Models\PageModels\HomePageViewModel.cs" />
+    <Compile Include="Models\SalesByFamilyOfBusinessViewModel.cs" />
     <Compile Include="Models\SalesByHourByStore.cs" />
+    <Compile Include="Models\SalesByStoreTableDataViewModel.cs" />
     <Compile Include="Models\SiteTotalFigures.cs" />
     <Compile Include="Models\StoreName.cs" />
     <Compile Include="Models\PageModels\StorePageViewModel.cs" />
+    <Compile Include="Models\TotalSalesByStoreViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CumulativeSalesService.cs" />
     <Compile Include="Services\ICumulativeSalesService.cs" />
+    <Compile Include="Services\ITodaysSalesService.cs" />
     <Compile Include="Services\TodaysSalesService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

@@ -5,9 +5,17 @@
         @Html.EnumDropDownListFor(m => m.StoreName, "Select My Store", new { @class = "form-control" })
     </div>
 
+<div class="col-md-6 col-sm-12">
     <div class="row">
+        <div>
+            @(Model.StoreName) Cumulative Daily Sales
+        </div>
         <canvas id="@(Model.StoreName + "canvas")" width="400" height="200"></canvas>
     </div>
+</div>
+<div class="col-md-6 col-sm-12">
+    //Todays sales for all store
+</div>
 
     @section Scripts{
         <script>

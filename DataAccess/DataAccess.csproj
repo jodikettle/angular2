@@ -83,11 +83,13 @@
     <Compile Include="FakeSalesRepository.cs" />
     <Compile Include="Hubs\ClientHub.cs" />
     <Compile Include="ISalesRepository.cs" />
+    <Compile Include="ITodaysSalesRepository.cs" />
     <Compile Include="Models\SiteSalesPerHour.cs" />
     <Compile Include="Models\SiteTotalSales.cs" />
     <Compile Include="SalesRepository.cs" />
-    <Compile Include="TodaysSalesRepository.cs" />
+    <Compile Include="TodaysCumulativeSalesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TodaysSalesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

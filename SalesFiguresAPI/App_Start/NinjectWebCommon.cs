@@ -64,7 +64,9 @@ namespace SalesFiguresAPI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICumulativeSalesService>().To<CumulativeSalesService>();
-            kernel.Bind<ISalesRepository>().To<TodaysSalesRepository>();
+            kernel.Bind<ISalesRepository>().To<FakeSalesRepository>();
+            kernel.Bind<ITodaysSalesService>().To<TodaysSalesService>();
+            kernel.Bind<ITodaysSalesRepository>().To<TodaysSalesRepository>();
         }        
     }
 }

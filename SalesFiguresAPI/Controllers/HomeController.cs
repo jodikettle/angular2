@@ -8,20 +8,18 @@ namespace SalesFiguresAPI.Controllers
     public class HomeController : Controller
     {
         private readonly ICumulativeSalesService _service;
+        private readonly ITodaysSalesService _totalSales;
 
-        public HomeController(ICumulativeSalesService service)
+        public HomeController(ICumulativeSalesService service, ITodaysSalesService _totalSales)
         {
             this._service = service;
+            this._totalSales = _totalSales;
         }
 
         public ActionResult Index()
         {
             var model = new HomePageViewModel();
-            //var cookieInfo = Request.Cookies["HomeStore"];
-            //if (cookieInfo != null)
-            //{
-            //    model.cookieInfo = cookieInfo.Value;
-            //}
+
             model.TodayCumulativeFigures = _service.GetAllStoresCumulativeSalesForToday();
             return View(model);
         }
@@ -34,6 +32,7 @@ namespace SalesFiguresAPI.Controllers
             }
             var model = new StorePageViewModel();
             model.StoreName = (StoreName)id;
+            model.TodaysSalesTotal = _totalSales.GetTodaysSalesTotal(id.ToString());
             model.CumulativeSalesForToday = _service.GetCumulativeSalesForToday(id.ToString());
 
             //return Json(returnData, JsonRequestBehavior.AllowGet);

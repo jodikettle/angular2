@@ -5,13 +5,60 @@
 <div class="row">
     @Html.EnumDropDownListFor(m => m.StoreName, "Select My Home Store", new { @class = "form-control" })
 </div>
-<div class="row">
-    @foreach (var storeData in Model.TodayCumulativeFigures) {
 
-        <p>@storeData.StoreName.ToString()</p>
-        <canvas id="@(storeData.StoreId + "canvas")" width="600" height="200"></canvas>
-    }
+<div class="col-md-6 col-sm-12">
+    <div class="row">
+        <h3>Todays Sales: @Model.TodaysSalesTotal</h3>
+        <h3>Sales Last Year: @Model.LastYearTodaysSalesTotal</h3>
+    </div>
+
+    <div class="row">
+        @Model.TableData
+    </div>
+
+
+    <div class="row">
+        Online-Dispatches:
+        Nil Picks:
+    </div>
+
+    @*Only Knightsbridge*@
+    <div class="row">
+        @foreach (var storeData in Model.TodayCumulativeFigures)
+        {
+            <div class="alert-info">
+                @(storeData.StoreName) Cumulative Daily Sales
+            </div>
+            <canvas id="@(storeData.StoreId + "canvas")" width="600" height="200"></canvas>
+        }
+    </div>
+
 </div>
+
+<div class="col-md-6 col-sm-12">
+    <div class="row">
+        <div class="alert-info">
+            Sale By Family of Business
+        </div>
+
+        @Model.SalesByFamily
+    </div>
+
+    <div>
+        <div class="alert-info">
+            Family of Business By Hour
+        </div>
+
+        @Model.AllStoresThisYearAndLast
+    </div>
+    <div>
+        <div class="alert-info">
+            Family of Business By Hour
+        </div>
+            @Model.AllStoresThisYearAndLast
+    </div>
+</div>
+
 @section Scripts{
     <script>
 
