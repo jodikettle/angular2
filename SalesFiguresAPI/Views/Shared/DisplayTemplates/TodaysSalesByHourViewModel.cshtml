@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SalesFiguresAPI.Models.TodaysSalesByHourViewModel>
+
+<div class="alert-info">
+    Sales By Hour
+</div>
+
+<canvas id="SalesPerHourCanvas" width="600" height="200"></canvas>
+
+<script type="text/javascript">
+    var nameOfCanvas = 'SalesPerHourCanvas';
+    var context = $("#" + nameOfCanvas).get(0).getContext("2d");
+
+    var results = @Html.Raw(Json.Encode(Model));
+
+    var xaxis = results.map(function (a) { return a.Hour });
+    var thisYearsValues = results.map(function(a) { return a.TodaysValue; });
+    var lastYearsValues = results.map(function(a) { return a.LastYearsValue; });
+
+    console.log(thisYearsValues);
+
+    var data = {
+        labels: xaxis,
+        datasets: [
+            {
+                label: "This Year",
+                backgroundColor: 
+                    'rgba(54, 162, 235, 0.2)',
+                borderColor: 
+                    'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+                data: thisYearsValues,
+            },
+            {
+                label: "Last Year",
+                backgroundColor:
+                    'rgba(255, 99, 132, 0.2)',
+                borderColor:
+                    'rgba(255,99,132,1)',
+                borderWidth: 1,
+                data: lastYearsValues,
+            }
+        ]
+    };
+
+    var myBarChart = new Chart(context, {
+        type: 'bar',
+        data: data
+    });
+</script>

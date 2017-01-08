@@ -4,7 +4,7 @@ using DataAccess.Models;
 
 namespace DataAccess
 {
-    public class SalesRepository : ISalesRepository
+    public class CumulativeSalesRepository : ICumulativeSalesRepository
     {
         public List<SiteSalesPerHour> GetCumulativeSalesForAllStores()
         {

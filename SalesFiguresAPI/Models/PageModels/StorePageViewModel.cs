@@ -13,6 +13,6 @@ namespace SalesFiguresAPI.Models
 
         public double TodaysSalesTotal { get; set; }
 
-        public CumulativeSaleByStore CumulativeSalesForToday { get; set; }
+        public CumulativeSaleByStoreViewModel CumulativeSalesForToday { get; set; }
     }
 }

@@ -5,8 +5,7 @@ namespace SalesFiguresAPI.Services
 {
     public interface ICumulativeSalesService
     {
-        List<CumulativeSaleByStore> GetAllStoresCumulativeSalesForToday();
-
-        CumulativeSaleByStore GetCumulativeSalesForToday(string StoreId);
+   
+        CumulativeSaleByStoreViewModel GetCumulativeSalesForToday(string StoreId);
     }
 }

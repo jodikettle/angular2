@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace DataAccess
 {
-    public interface ISalesRepository
+    public interface ICumulativeSalesRepository
     {
-        List<SiteSalesPerHour> GetCumulativeSalesForAllStores();
+        //List<SiteSalesPerHour> GetCumulativeSalesForAllStores();
 
         List<SiteSalesPerHour> GetCumulativeSalesForToday(string StoreId);
     }

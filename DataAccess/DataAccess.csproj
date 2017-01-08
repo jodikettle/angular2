@@ -81,13 +81,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FakeSalesRepository.cs" />
+    <Compile Include="FakeTodaysSalesRepository.cs" />
+    <Compile Include="FamilyOfBusinessRepository.cs" />
     <Compile Include="Hubs\ClientHub.cs" />
-    <Compile Include="ISalesRepository.cs" />
+    <Compile Include="IFamilyOfBusinessRepository.cs" />
+    <Compile Include="IOrderDispatchRepository.cs" />
+    <Compile Include="ICumulativeSalesRepository.cs" />
     <Compile Include="ITodaysSalesRepository.cs" />
+    <Compile Include="Models\DispatchInformation.cs" />
+    <Compile Include="Models\FamilyOfBusinessPercentage.cs" />
     <Compile Include="Models\SiteSalesPerHour.cs" />
     <Compile Include="Models\SiteTotalSales.cs" />
-    <Compile Include="SalesRepository.cs" />
-    <Compile Include="TodaysCumulativeSalesRepository.cs" />
+    <Compile Include="Models\TableData.cs" />
+    <Compile Include="Models\TotalSalesFigures.cs" />
+    <Compile Include="OrderDispatchRepository.cs" />
+    <Compile Include="CumulativeSalesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TodaysSalesRepository.cs" />
   </ItemGroup>

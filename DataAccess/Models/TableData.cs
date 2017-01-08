@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SalesFiguresAPI.Models
+namespace DataAccess.Models
 {
-    public class SalesByStoreTableDataViewModel
-    {
-        public List<SalesTableInformation> TableInfo { get; set; }
-    }
-
-    public class SalesTableInformation
+    public class TableData
     {
         public string StoreName { get; set; }
         public double TodaySalesTotal { get; set; }
@@ -15,6 +14,5 @@ namespace SalesFiguresAPI.Models
         public double LastYearSalesTotal { get; set; }
         public double CurrentWeekSalesTotal { get; set; }
         public double WeekLastYearsSalesTotal { get; set; }
-
     }
 }

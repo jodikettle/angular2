@@ -1,0 +1,35 @@
+﻿@model SalesFiguresAPI.Models.SalesByStoreTableDataViewModel
+
+<div class="mb10">
+    <table class="store-data" border="1" cellpadding="4">
+        <tr>
+            <th>Store</th>
+            <th>
+                Today
+            </th>
+            <th>
+                Yesterday
+            </th>
+            <th>
+                Last Year
+            </th>
+            <th>
+                Current Week
+            </th>
+            <th>
+                Week Last Year
+            </th>
+        </tr>
+        @foreach(var storeData in Model.TableInfo)
+        {
+            <tr>
+                <td>@storeData.StoreName</td>
+                <td>@storeData.TodaySalesTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</td>
+                <td>@storeData.YesterdaySalesTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</td>
+                <td>@storeData.LastYearSalesTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</td>
+                <td>@storeData.CurrentWeekSalesTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</td>
+                <td>@storeData.WeekLastYearsSalesTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</td>
+            </tr>
+        }
+    </table>
+</div>

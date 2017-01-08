@@ -7,77 +7,85 @@ using DataAccess.Models;
 
 namespace DataAccess
 {
-    public class FakeSalesRepository : ISalesRepository
+    public class FakeSalesRepository : ICumulativeSalesRepository
     {
-        public List<SiteSalesPerHour> GetCumulativeSalesForAllStores()
-        {
-            var list = new List<SiteSalesPerHour>();
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "001",
-                Hour = 09,
-                TodaysValue = 0,
-                LastYearsValue = 0
-            });
+        //public List<SiteSalesPerHour> GetCumulativeSalesForAllStores()
+        //{
+        //    var list = new List<SiteSalesPerHour>();
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Knightsbridge",
+        //        SiteId = "001",
+        //        Hour = 09,
+        //        TodaysValue = 0,
+        //        LastYearsValue = 0
+        //    });
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "001",
-                Hour = 10,
-                TodaysValue = 150,
-                LastYearsValue = 160
-            });
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Knightsbridge",
+        //        SiteId = "001",
+        //        Hour = 10,
+        //        TodaysValue = 150,
+        //        LastYearsValue = 160
+        //    });
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "001",
-                Hour = 11,
-                TodaysValue = 180,
-                LastYearsValue = 180
-            });
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Knightsbridge",
+        //        SiteId = "001",
+        //        Hour = 11,
+        //        TodaysValue = 180,
+        //        LastYearsValue = 180
+        //    });
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "001",
-                Hour = 12,
-                TodaysValue = 0,
-                LastYearsValue = 200
-            });
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Knightsbridge",
+        //        SiteId = "001",
+        //        Hour = 12,
+        //        TodaysValue = 0,
+        //        LastYearsValue = 200
+        //    });
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "001",
-                Hour = 13,
-                TodaysValue = 0,
-                LastYearsValue = 230
-            });
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Knightsbridge",
+        //        SiteId = "001",
+        //        Hour = 13,
+        //        TodaysValue = 0,
+        //        LastYearsValue = 230
+        //    });
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "001",
-                Hour = 14,
-                TodaysValue = 0,
-                LastYearsValue = 250
-            });
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Knightsbridge",
+        //        SiteId = "001",
+        //        Hour = 14,
+        //        TodaysValue = 0,
+        //        LastYearsValue = 250
+        //    });
 
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "003",
-                Hour = 9,
-                TodaysValue = 10,
-                LastYearsValue = 15
-            });
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Leeds",
+        //        SiteId = "003",
+        //        Hour = 9,
+        //        TodaysValue = 10,
+        //        LastYearsValue = 15
+        //    });
 
-            list.Add(new SiteSalesPerHour()
-            {
-                SiteId = "003",
-                Hour = 10,
-                TodaysValue = 20,
-                LastYearsValue = 35
-            });
-            return list;
-        }
+        //    list.Add(new SiteSalesPerHour()
+        //    {
+        //        SiteName = "Leeds",
+        //        SiteId = "003",
+        //        Hour = 10,
+        //        TodaysValue = 20,
+        //        LastYearsValue = 35
+        //    });
+        //    return list;
+        //}
 
         public List<SiteSalesPerHour> GetCumulativeSalesForToday(string StoreId)
         {
@@ -85,6 +93,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 9,
                 TodaysValue = 0,
@@ -93,6 +102,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 10,
                 TodaysValue = 20,
@@ -101,6 +111,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 11,
                 TodaysValue = 50,
@@ -109,6 +120,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 12,
                 TodaysValue = 80,
@@ -117,6 +129,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 13,
                 TodaysValue = 90,
@@ -125,6 +138,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 14,
                 TodaysValue = 0,
@@ -133,6 +147,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 15,
                 TodaysValue = 0,
@@ -141,6 +156,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 16,
                 TodaysValue = 0,
@@ -149,6 +165,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 17,
                 TodaysValue = 0,
@@ -157,6 +174,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 18,
                 TodaysValue = 0,
@@ -165,6 +183,7 @@ namespace DataAccess
 
             list.Add(new SiteSalesPerHour()
             {
+                SiteName = "Leeds",
                 SiteId = "003",
                 Hour = 19,
                 TodaysValue = 0,

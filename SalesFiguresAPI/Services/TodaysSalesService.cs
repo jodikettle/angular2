@@ -1,4 +1,9 @@
-﻿using DataAccess;
+﻿
+using DataAccess;
+using SalesFiguresAPI.Models;
+using AutoMapper;
+using System.Collections.Generic;
+using System;
 
 namespace SalesFiguresAPI.Services
 {
@@ -10,10 +15,21 @@ namespace SalesFiguresAPI.Services
         {
             this.repository = repository;
         }
-        public double GetTodaysSalesTotal(string storeId)
+
+        public List<TodaysSalesByHourViewModel> GetSalesByHour()
         {
-            storeId = "000" + storeId;
-            return repository.GetTodaysSales(storeId);
+            return Mapper.Map<List<TodaysSalesByHourViewModel>>(repository.GetTodaysSaleByHour());
+        }
+
+        public SalesByStoreTableDataViewModel GetTableData()
+        {
+            var tableData = Mapper.Map<List<SalesTableInformation>>(repository.GetAllStoresThisWeekAndLast());
+            return new SalesByStoreTableDataViewModel { TableInfo =  tableData };
+        }
+
+        public TodaySalesViewModel GetTodaysSalesTotal()
+        {
+            return Mapper.Map<TodaySalesViewModel>(repository.GetTodaysSales());
         }
     }
 }

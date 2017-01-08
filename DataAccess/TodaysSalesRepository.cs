@@ -1,13 +1,25 @@
 ﻿using DataAccess.Hubs;
+using DataAccess.Models;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 
 namespace DataAccess
 {
     public class TodaysSalesRepository : ITodaysSalesRepository
     {
         private static string _connString = ConfigurationManager.ConnectionStrings["JodiUpdate"].ConnectionString;
+
+        public TotalSalesFigures GetTodaysSales()
+        {
+            return new TotalSalesFigures()
+            {
+                TodaysCurrentTotal = 292662,
+                LastYearsTotal = 1200489
+            };
+        }
 
         public double GetTodaysSales2(string storeId)
         {
@@ -21,8 +33,8 @@ namespace DataAccess
                 {
                     command.Notification = null;
 
-                    var dependency = new SqlDependency(command);
-                    dependency.OnChange += new OnChangeEventHandler(TotalSales_OnChange);
+                    //var dependency = new SqlDependency(command);
+                    //dependency.OnChange += new OnChangeEventHandler(TotalSales_OnChange);
 
                     if (connection.State == ConnectionState.Closed)
                         connection.Open();
@@ -60,8 +72,8 @@ namespace DataAccess
                 {
                     command.Notification = null;
 
-                    var dependency = new SqlDependency(command);
-                    dependency.OnChange += new OnChangeEventHandler(TotalSales1_OnChange);
+                    //var dependency = new SqlDependency(command);
+                    //dependency.OnChange += new OnChangeEventHandler(TotalSales1_OnChange);
 
                     if (connection.State == ConnectionState.Closed)
                         connection.Open();
@@ -96,6 +108,21 @@ namespace DataAccess
             {
                 MessagesHub.TotalSalesByStore();
             }
+        }
+
+        public List<TableData> GetAllStoresThisWeekAndLast()
+        {
+            throw new NotImplementedException();
+        }
+
+        public SiteSalesPerHour GetTodaysSaleByHour()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SiteSalesPerHour> ITodaysSalesRepository.GetTodaysSaleByHour()
+        {
+            throw new NotImplementedException();
         }
     }
 }

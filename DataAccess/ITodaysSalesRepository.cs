@@ -1,8 +1,14 @@
-﻿
+﻿using DataAccess.Models;
+using System.Collections.Generic;
+
 namespace DataAccess
 {
     public interface ITodaysSalesRepository
     {
-        double GetTodaysSales(string storeId);
+        TotalSalesFigures GetTodaysSales();
+
+        List<TableData> GetAllStoresThisWeekAndLast();
+
+        List<SiteSalesPerHour> GetTodaysSaleByHour();
     }
 }

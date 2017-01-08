@@ -1,0 +1,4 @@
+﻿@model SalesFiguresAPI.Models.TodaySalesViewModel
+
+<h3>Todays Sales: @Model.TodaysCurrentTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</h3>
+<h3>Sales Last Year: @Model.LastYearsTotal.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</h3>

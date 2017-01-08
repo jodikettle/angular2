@@ -1,26 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SalesFiguresAPI.Models
 {
+    public static class StoreNames
+    {
+        public static readonly Dictionary<string, string> StoreName1 = new Dictionary<string, string>
+        {
+            { "0001", "Knightsbridge" },
+            { "0003", "Birmingham" },
+            { "0004", "Leeds" },
+            { "0007", "Dublin" },
+            { "0009", "Bristol" }
+        };
+    }
+
     public enum StoreName
     {
-        Knightsbridge= 1,
+        Knightsbridge = 1,
         Leeds,
-        Liverpool,
-        Bristol, 
+        Dublin,
+        Bristol,
         Edinburgh,
         Birmingham,
         Manchester
     }
-
-    //public Dictionary StoreName1
-    //{
-    //    Knightsbridge = "0001"
-    //    Leeds, = "003"
-    //    Liverpool,
-    //    Bristol,
-    //    Edinburgh,
-    //    Birmingham,
-    //    Manchester
-    //}
 }

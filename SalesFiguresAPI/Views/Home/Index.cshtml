@@ -1,62 +1,20 @@
 ﻿@model SalesFiguresAPI.Models.HomePageViewModel
-@{ 
-    string test = string.Empty;
-}
-<div class="row">
+
+@*<div style="margin-top: 10px;">
     @Html.EnumDropDownListFor(m => m.StoreName, "Select My Home Store", new { @class = "form-control" })
+</div>*@
+
+<div class="col-md-6 col-sm-12">
+    @Html.DisplayFor(m=> m.TodaysSalesTotals)
+    @Html.DisplayFor(m => m.TableData)
+    @Html.DisplayFor(m=> m.DispatchInfo)
+    @Html.DisplayFor(m=> m.TodayCumulativeFigures)
 </div>
 
 <div class="col-md-6 col-sm-12">
-    <div class="row">
-        <h3>Todays Sales: @Model.TodaysSalesTotal</h3>
-        <h3>Sales Last Year: @Model.LastYearTodaysSalesTotal</h3>
-    </div>
-
-    <div class="row">
-        @Model.TableData
-    </div>
-
-
-    <div class="row">
-        Online-Dispatches:
-        Nil Picks:
-    </div>
-
-    @*Only Knightsbridge*@
-    <div class="row">
-        @foreach (var storeData in Model.TodayCumulativeFigures)
-        {
-            <div class="alert-info">
-                @(storeData.StoreName) Cumulative Daily Sales
-            </div>
-            <canvas id="@(storeData.StoreId + "canvas")" width="600" height="200"></canvas>
-        }
-    </div>
-
-</div>
-
-<div class="col-md-6 col-sm-12">
-    <div class="row">
-        <div class="alert-info">
-            Sale By Family of Business
-        </div>
-
-        @Model.SalesByFamily
-    </div>
-
-    <div>
-        <div class="alert-info">
-            Family of Business By Hour
-        </div>
-
-        @Model.AllStoresThisYearAndLast
-    </div>
-    <div>
-        <div class="alert-info">
-            Family of Business By Hour
-        </div>
-            @Model.AllStoresThisYearAndLast
-    </div>
+    @Html.DisplayFor(m=> m.SalesByFamily)
+    @Html.DisplayFor(m => m.SalesByFamilyPerHour)
+    @Html.DisplayFor(m => m.SalesPerHour, "TodaysSalesByHourViewModel")
 </div>
 
 @section Scripts{
@@ -67,7 +25,7 @@
             window.location.href = "/home/store/" + this.value;
         });
 
-        var results = @Html.Raw(Json.Encode(Model.TodayCumulativeFigures));
+        @*var results = @Html.Raw(Json.Encode(Model.TodayCumulativeFigures));
 
         for(var i = 0; i< results.length; i++){
             var nameOfCanvas = results[i].StoreId + 'canvas';
@@ -139,6 +97,6 @@
                 type: "line",
                 data: data
             });
-        }
+        }*@
     </script>
 }

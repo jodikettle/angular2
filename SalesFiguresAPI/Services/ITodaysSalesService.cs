@@ -1,7 +1,14 @@
-﻿namespace SalesFiguresAPI.Services
+﻿using SalesFiguresAPI.Models;
+using System.Collections.Generic;
+
+namespace SalesFiguresAPI.Services
 {
     public interface ITodaysSalesService
     {
-        double GetTodaysSalesTotal(string StoreId);
+        TodaySalesViewModel GetTodaysSalesTotal();
+
+        SalesByStoreTableDataViewModel GetTableData();
+
+        List<TodaysSalesByHourViewModel> GetSalesByHour();
     }
 }

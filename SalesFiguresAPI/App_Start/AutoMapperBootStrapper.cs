@@ -11,9 +11,13 @@ namespace SalesFiguresAPI.App_Start
         public static void BootStrap()
         {
             Mapper.Initialize(cfg => {
-                cfg.CreateMap<SiteTotalSales, SiteTotalFigures>();
-                cfg.CreateMap<SiteSalesPerHour, SalesByHourByStore>();
+                //cfg.CreateMap<SiteTotalSales, SiteTotalFigures>();
+                cfg.CreateMap<SiteSalesPerHour, TodaysSalesByHourViewModel>();
                 cfg.CreateMap<SiteSalesPerHour, CumulativeSalesData>();
+                cfg.CreateMap<TotalSalesFigures, TodaySalesViewModel>();
+                cfg.CreateMap<DispatchInformation, DispatchInfoViewModel>();
+                cfg.CreateMap<TableData, SalesTableInformation>();
+                cfg.CreateMap<FamilyOfBusinessPercentage, FamilyOfBusiness>();
             });
         }
     }

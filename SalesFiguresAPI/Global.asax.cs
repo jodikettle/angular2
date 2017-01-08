@@ -24,12 +24,12 @@ namespace SalesFiguresAPI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapperBootStrapper.BootStrap();
 
-            SqlDependency.Start(connString);
+            //SqlDependency.Start(connString);
         }
 
         protected void Application_End()
         {
-            SqlDependency.Stop(connString);
+            //SqlDependency.Stop(connString);
         }
     }
 }

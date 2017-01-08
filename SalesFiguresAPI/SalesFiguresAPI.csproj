@@ -235,22 +235,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AllStoresThisYearAndLastViewModel.cs" />
-    <Compile Include="Models\CumulativeSaleByStore.cs" />
+    <Compile Include="Models\CumulativeSaleByStoreViewModel.cs" />
     <Compile Include="Models\CumulativeSalesData.cs" />
-    <Compile Include="Models\GeneralPageViewModel.cs" />
+    <Compile Include="Models\DispatchInfoViewModel.cs" />
     <Compile Include="Models\PageModels\HomePageViewModel.cs" />
     <Compile Include="Models\SalesByFamilyOfBusinessViewModel.cs" />
-    <Compile Include="Models\SalesByHourByStore.cs" />
+    <Compile Include="Models\TodaysSaleByHourViewModel.cs" />
     <Compile Include="Models\SalesByStoreTableDataViewModel.cs" />
-    <Compile Include="Models\SiteTotalFigures.cs" />
+    <Compile Include="Models\SalesByFamilyOfBusinessByHourViewModel.cs" />
     <Compile Include="Models\StoreName.cs" />
     <Compile Include="Models\PageModels\StorePageViewModel.cs" />
-    <Compile Include="Models\TotalSalesByStoreViewModel.cs" />
+    <Compile Include="Models\TodaySalesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CumulativeSalesService.cs" />
+    <Compile Include="Services\FamilyOfBusinessSalesService.cs" />
     <Compile Include="Services\ICumulativeSalesService.cs" />
+    <Compile Include="Services\IFamilyOfBusinessSalesService.cs" />
+    <Compile Include="Services\IOrderDispatchService.cs" />
     <Compile Include="Services\ITodaysSalesService.cs" />
+    <Compile Include="Services\OrderDispatchService.cs" />
     <Compile Include="Services\TodaysSalesService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -312,9 +315,14 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Data\Index.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteTotalSales.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\Home\Store.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SalesByStoreTableDataViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SalesByFamilyOfBusinessViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SalesByFamilyOfBusinessByHourViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TodaysSalesByHourViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CumulativeSaleByStoreViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DispatchInfoViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TodaySalesViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
@@ -348,7 +356,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56216</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56216/</IISUrl>
+          <IISUrl>http://localhost:23112/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

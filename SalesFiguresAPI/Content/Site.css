@@ -15,3 +15,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.store-data tbody tr th {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.store-data tr td {
+    font-size: 10px;
+}
+
+.mb10{
+    margin-top: 10px;
+}
+
+.mt10{
+    margin-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 ﻿namespace SalesFiguresAPI.Models
 {
-    public class SalesByHourByStore
+    public class TodaysSalesByHourViewModel
     {
         public int Hour { get; set; }
         public double TodaysValue { get; set; }

@@ -1,0 +1,43 @@
+﻿@model SalesFiguresAPI.Models.SalesByFamilyOfBusinessViewModel
+
+<div class="mt10 mb10">
+    <div class="alert-info">
+        Sales By Family of Business
+    </div>
+    <canvas id="FamilyCanvas" width="600" height="200"></canvas>
+</div>
+
+<script type="text/javascript">
+
+    var results = @Html.Raw(Json.Encode(Model.Sales));
+    var category = results.map(function (a) { return a.Category });
+    var percentags = results.map(function (a) { return a.Percentage });
+
+    console.log(category);
+
+    var nameOfCanvas = 'FamilyCanvas';
+    var context = $("#" + nameOfCanvas).get(0).getContext("2d");
+
+    var data = {
+        labels: category,
+        datasets: [
+            {
+                data: percentags,
+                backgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ]
+            }]
+    };
+
+    var myPieChart = new Chart(context, {
+        type: 'pie',
+        data: data
+    });
+</script>
